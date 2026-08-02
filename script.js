@@ -6,7 +6,7 @@ console.log("Bienvenue chez Les Assaisonnements L'Impérial !");
 // "noel", "nouvel_an", "valentin", "paques"
 // Exemple : const SAISON_FORCEE = "noel";
 // ============================================================
-const SAISON_FORCEE = "valentin";
+const SAISON_FORCEE = "";
 
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
