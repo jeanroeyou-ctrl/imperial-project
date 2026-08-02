@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=5.0, user-scalable=yes">
+  <title>Nos Produits - Les Assaisonnements L'Impérial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="accueil">
+  <div class="logo">
+    <img src="images/logo.jpg" alt="Logo Les Assaisonnements L'Impérial">
+  </div>
+  
+  <h1>Les Assaisonnements L'Impérial</h1>
+  <button class="hamburger" id="hamburger">☰</button>
+  <nav id="nav-menu">
+    <a href="index.html">Accueil</a>
+    <a href="produits.html">Nos Produits</a>
+    <a href="apropos.html">À propos</a>
+  </nav>
+</header>
+
+<section id="produits" class="produits">
+  <div class="cadre-banniere">
+    <img src="Images/feuileba.png" alt="Nos Produits">
+    <h2 class="titre-mobile-produits">Nos produits</h2>
+  </div>
+  <div class="grille-produits">
+
+    <div class="carte-produit">
+      <img src="images/afri.jpg" alt="Assaisonnement Africain" onclick="agrandirImage(this)">
+      <h3>Sauce africaine</h3>
+      <p>Un mélange d'épices aux saveurs d'Afrique.</p>
+      <div class="options-grammage">
+        <div class="ligne-grammage" data-prix="2000">
+          <span class="grammage-label">100g - 2000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="5000">
+          <span class="grammage-label">300g - 5000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="10000">
+          <span class="grammage-label">500g - 10000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+      </div>
+      <p class="prix-total">Total : 0 FCFA</p>
+      <button class="btn-acheter" onclick="ajouterAuPanier(this)">Ajouter à la commande</button>
+    </div>
+
+    <div class="carte-produit">
+      <img src="images/bro.jpg" alt="Assaisonnement Brochette" onclick="agrandirImage(this)">
+      <h3>Brochettes et grillades épicées</h3>
+      <p>Parfait pour vos brochettes grillées.</p>
+      <div class="options-grammage">
+        <div class="ligne-grammage" data-prix="2000">
+          <span class="grammage-label">100g - 2000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="5000">
+          <span class="grammage-label">300g - 5000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="10000">
+          <span class="grammage-label">500g - 10000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+      </div>
+      <p class="prix-total">Total : 0 FCFA</p>
+      <button class="btn-acheter" onclick="ajouterAuPanier(this)">Ajouter à la commande</button>
+    </div>
+
+    <div class="carte-produit">
+      <img src="images/ital.jpg" alt="Assaisonnement Italien" onclick="agrandirImage(this)">
+      <h3>À l'italienne</h3>
+      <p>Les herbes et épices de la cuisine italienne.</p>
+      <div class="options-grammage">
+        <div class="ligne-grammage" data-prix="2000">
+          <span class="grammage-label">100g - 2000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="5000">
+          <span class="grammage-label">300g - 5000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="10000">
+          <span class="grammage-label">500g - 10000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+      </div>
+      <p class="prix-total">Total : 0 FCFA</p>
+      <button class="btn-acheter" onclick="ajouterAuPanier(this)">Ajouter à la commande</button>
+    </div>
+
+    <div class="carte-produit">
+      <img src="images/mix.jpg" alt="Mix d'assaisonnements" onclick="agrandirImage(this)">
+      <h3>Mix</h3>
+      <p>Un mélange polyvalent pour tous vos plats.</p>
+      <div class="options-grammage">
+        <div class="ligne-grammage" data-prix="2000">
+          <span class="grammage-label">100g - 2000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="5000">
+          <span class="grammage-label">300g - 5000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="10000">
+          <span class="grammage-label">500g - 10000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+      </div>
+      <p class="prix-total">Total : 0 FCFA</p>
+      <button class="btn-acheter" onclick="ajouterAuPanier(this)">Ajouter à la commande</button>
+    </div>
+
+    <div class="carte-produit">
+      <img src="images/nonepi.jpg" alt="Assaisonnement Non Épicé" onclick="agrandirImage(this)">
+      <h3>Brochettes et grillades non épicées</h3>
+      <p>Toute la saveur, sans le piquant.</p>
+      <div class="options-grammage">
+        <div class="ligne-grammage" data-prix="2000">
+          <span class="grammage-label">100g - 2000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="5000">
+          <span class="grammage-label">300g - 5000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="10000">
+          <span class="grammage-label">500g - 10000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+      </div>
+      <p class="prix-total">Total : 0 FCFA</p>
+      <button class="btn-acheter" onclick="ajouterAuPanier(this)">Ajouter à la commande</button>
+    </div>
+
+    <div class="carte-produit">
+      <img src="images/poisson.jpg" alt="Assaisonnement Poisson" onclick="agrandirImage(this)">
+      <h3>Poisson</h3>
+      <p>Idéal pour sublimer vos plats de poisson.</p>
+      <div class="options-grammage">
+        <div class="ligne-grammage" data-prix="2000">
+          <span class="grammage-label">100g - 2000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="5000">
+          <span class="grammage-label">300g - 5000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="10000">
+          <span class="grammage-label">500g - 10000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+      </div>
+      <p class="prix-total">Total : 0 FCFA</p>
+      <button class="btn-acheter" onclick="ajouterAuPanier(this)">Ajouter à la commande</button>
+    </div>
+
+    <div class="carte-produit">
+      <img src="images/porc.jpg" alt="Assaisonnement Porc" onclick="agrandirImage(this)">
+      <h3>Porc</h3>
+      <p>Le mélange parfait pour vos plats de porc.</p>
+      <div class="options-grammage">
+        <div class="ligne-grammage" data-prix="2000">
+          <span class="grammage-label">100g - 2000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="5000">
+          <span class="grammage-label">300g - 5000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="10000">
+          <span class="grammage-label">500g - 10000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+      </div>
+      <p class="prix-total">Total : 0 FCFA</p>
+      <button class="btn-acheter" onclick="ajouterAuPanier(this)">Ajouter à la commande</button>
+    </div>
+
+    <div class="carte-produit">
+      <img src="images/poulet.jpg" alt="Assaisonnement Poulet" onclick="agrandirImage(this)">
+      <h3>Poulet</h3>
+      <p>Pour un poulet savoureux à chaque fois.</p>
+      <div class="options-grammage">
+        <div class="ligne-grammage" data-prix="2000">
+          <span class="grammage-label">100g - 2000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="5000">
+          <span class="grammage-label">300g - 5000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="10000">
+          <span class="grammage-label">500g - 10000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+      </div>
+      <p class="prix-total">Total : 0 FCFA</p>
+      <button class="btn-acheter" onclick="ajouterAuPanier(this)">Ajouter à la commande</button>
+    </div>
+
+    <div class="carte-produit">
+      <img src="images/viande.jpg" alt="Assaisonnement Viande" onclick="agrandirImage(this)">
+      <h3>Viande</h3>
+      <p>Rehausse le goût de toutes vos viandes.</p>
+      <div class="options-grammage">
+        <div class="ligne-grammage" data-prix="2000">
+          <span class="grammage-label">100g - 2000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="5000">
+          <span class="grammage-label">300g - 5000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+        <div class="ligne-grammage" data-prix="10000">
+          <span class="grammage-label">500g - 10000 FCFA</span>
+          <div class="quantite-controle">
+            <button type="button" class="btn-moins" onclick="changerQuantite(this, -1)">−</button>
+            <span class="quantite-valeur">0</span>
+            <button type="button" class="btn-plus" onclick="changerQuantite(this, 1)">+</button>
+          </div>
+        </div>
+      </div>
+      <p class="prix-total">Total : 0 FCFA</p>
+      <button class="btn-acheter" onclick="ajouterAuPanier(this)">Ajouter à la commande</button>
+    </div>
+
+  </div>
+  </section>
+  <div id="lightbox" class="lightbox" onclick="fermerImage()">
+  <img id="lightbox-img" src="" alt="Produit agrandi">
+</div>
+
+<section class="contact-section">
+  <h2>Nous contacter</h2>
+  <p class="contact-intro">Pour toute question ou commande, n'hésitez pas à nous contacter :</p>
+  <div class="contact-info">
+    <p><i class="fa-solid fa-phone"></i> <a href="tel:+2250779490959">+225 07 79 49 09 59</a></p>
+    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:maxwellgtservices@gmail.com">maxwellgtservices@gmail.com</a></p>
+    <p><i class="fa-solid fa-globe"></i> Vente en ligne uniquement</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Maxwell Global Services & Trade. Tous droits réservés.</p>
+</footer>
+
+<div id="panier-flottant" class="panier-flottant">
+  <span id="panier-total">Panier : 0 article(s) - 0 FCFA</span>
+  <button type="button" class="btn-valider-panier" onclick="validerPanier()">Valider ma commande</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

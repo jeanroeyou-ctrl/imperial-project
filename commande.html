@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=5.0, user-scalable=yes">
+  <title>Ma Commande - Les Assaisonnements L'Impérial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="accueil">
+  <div class="logo">
+    <img src="images/logo.jpg" alt="Logo Les Assaisonnements L'Impérial">
+  </div>
+  
+  <h1>Les Assaisonnements L'Impérial</h1>
+  <button class="hamburger" id="hamburger">☰</button>
+  <nav id="nav-menu">
+    <a href="index.html">Accueil</a>
+    <a href="produits.html">Nos Produits</a>
+    <a href="apropos.html">À propos</a>
+  </nav>
+</header>
+
+<section class="commande-section">
+  <h2>Votre commande</h2>
+
+  <div id="recap-commande" class="recap-commande">
+    <div id="recap-liste"></div>
+    <p id="recap-total-global"><strong>Total général : 0 FCFA</strong></p>
+  </div>
+
+  <form id="form-commande" class="formulaire-commande">
+    <div class="champ-formulaire">
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="nom">
+    </div>
+    <div class="champ-formulaire">
+      <label for="prenom">Prénom(s)</label>
+      <input type="text" id="prenom" name="prenom">
+    </div>
+    <div class="champ-formulaire">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+    </div>
+    <div class="champ-formulaire">
+      <label for="contact">Contact</label>
+      <input type="text" id="contact" name="contact">
+    </div>
+    <div class="champ-formulaire">
+      <label for="lieu">Lieu de livraison</label>
+      <input type="text" id="lieu" name="lieu">
+    </div>
+    <button type="submit" class="btn-valider">Valider la commande</button>
+  </form>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Maxwell Global Services & Trade. Tous droits réservés.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
