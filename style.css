@@ -1101,3 +1101,7 @@ body.saison-paques .pourquoi-nous .atout:nth-child(3)::after { content: '🌷'; 
     font-size: 17px;
   }
 }
+.requis {
+  color: red;
+  margin-left: 3px;
+}
