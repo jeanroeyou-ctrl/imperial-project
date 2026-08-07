@@ -12,7 +12,7 @@ const SAISON_FORCEE = "";
 // ---------- Configuration EmailJS ----------
 // ============================================================
 const EMAILJS_PUBLIC_KEY = "1PPWKwDy2kS95AIkc";
-const EMAILJS_SERVICE_ID = "service_hywjgla";
+const EMAILJS_SERVICE_ID = "service_obx6q6t";
 const EMAILJS_TEMPLATE_CLIENT = "template_1w5qu5s";
 const EMAILJS_TEMPLATE_ADMIN = "template_5lwj9et";
 
