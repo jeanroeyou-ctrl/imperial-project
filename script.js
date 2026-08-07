@@ -318,6 +318,7 @@ if (document.getElementById('recap-commande')) {
       })
       .catch((erreur) => {
         console.error("Erreur lors de l'envoi des emails :", erreur);
+        alert("ERREUR DEBUG : " + JSON.stringify(erreur));
         boutonValider.disabled = false;
         boutonValider.innerText = texteBoutonOriginal;
       });
