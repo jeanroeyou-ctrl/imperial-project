@@ -47,7 +47,10 @@
     </div>
     <div class="champ-formulaire">
       <label for="contact">Contact<span class="requis">*</span></label>
-      <input type="text" id="contact" name="contact">
+      <div class="champ-avec-indicatif">
+        <span class="indicatif">+225</span>
+        <input type="tel" id="contact" name="contact" inputmode="numeric" maxlength="10" placeholder="0700000000">
+      </div>
     </div>
     <div class="champ-formulaire">
       <label for="lieu">Lieu de livraison<span class="requis">*</span></label>
