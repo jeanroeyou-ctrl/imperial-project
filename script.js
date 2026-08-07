@@ -8,6 +8,18 @@ console.log("Bienvenue chez Les Assaisonnements L'Impérial !");
 // ============================================================
 const SAISON_FORCEE = "";
 
+// ============================================================
+// ---------- Configuration EmailJS ----------
+// ============================================================
+const EMAILJS_PUBLIC_KEY = "1PPWKwDy2kS95AIkc";
+const EMAILJS_SERVICE_ID = "service_hywjgla";
+const EMAILJS_TEMPLATE_CLIENT = "template_1w5qu5s";
+const EMAILJS_TEMPLATE_ADMIN = "template_5lwj9et";
+
+if (typeof emailjs !== "undefined") {
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+}
+
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
 
@@ -144,6 +156,11 @@ function ajouterAuPanier(bouton) {
   const nomProduit = carte.querySelector('h3').innerText;
   const lignesDOM = carte.querySelectorAll('.ligne-grammage');
 
+  // Récupère l'image du produit et la transforme en URL absolue
+  // (nécessaire pour qu'elle s'affiche correctement dans les emails)
+  const imgElement = carte.querySelector('img');
+  const imageURL = imgElement ? new URL(imgElement.getAttribute('src'), window.location.href).href : '';
+
   let lignes = [];
 
   lignesDOM.forEach(ligne => {
@@ -161,7 +178,7 @@ function ajouterAuPanier(bouton) {
   }
 
   const panier = chargerPanier();
-  panier.push({ nom: nomProduit, lignes: lignes });
+  panier.push({ nom: nomProduit, image: imageURL, lignes: lignes });
   sauvegarderPanier(panier);
 
   lignesDOM.forEach(ligne => {
@@ -182,6 +199,61 @@ function validerPanier() {
     return;
   }
   window.location.href = 'commande.html';
+}
+
+// ---------- Construction du récapitulatif HTML pour les emails ----------
+
+function construireRecapHTML(panier, avecImages) {
+  let html = '';
+  panier.forEach(item => {
+    html += '<div style="margin-bottom:14px; display:flex; align-items:flex-start; gap:10px;">';
+
+    if (avecImages && item.image) {
+      html += '<img src="' + item.image + '" alt="' + item.nom + '" width="60" height="60" style="width:60px;height:60px;object-fit:cover;border-radius:6px;flex-shrink:0;">';
+    }
+
+    html += '<div>';
+    html += '<strong>' + item.nom + '</strong><br>';
+    item.lignes.forEach(ligne => {
+      html += ligne.quantite + ' x ' + ligne.label + ' — ' + (ligne.prixUnitaire * ligne.quantite) + ' FCFA<br>';
+    });
+    html += '</div>';
+
+    html += '</div>';
+  });
+  return html;
+}
+
+// ---------- Envoi des emails via EmailJS ----------
+
+function envoyerEmailsCommande(donneesClient, panier, total) {
+  const recapClient = construireRecapHTML(panier, false);
+  const recapAdmin = construireRecapHTML(panier, true);
+
+  const paramsClient = {
+    prenom: donneesClient.prenom,
+    nom: donneesClient.nom,
+    email: donneesClient.email,
+    contact: donneesClient.contact,
+    lieu: donneesClient.lieu,
+    recap_commande: recapClient,
+    total: total
+  };
+
+  const paramsAdmin = {
+    prenom: donneesClient.prenom,
+    nom: donneesClient.nom,
+    email: donneesClient.email,
+    contact: donneesClient.contact,
+    lieu: donneesClient.lieu,
+    recap_commande: recapAdmin,
+    total: total
+  };
+
+  const envoiClient = emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CLIENT, paramsClient);
+  const envoiAdmin = emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, paramsAdmin);
+
+  return Promise.all([envoiClient, envoiAdmin]);
 }
 
 if (document.getElementById('panier-flottant')) {
@@ -224,11 +296,31 @@ if (document.getElementById('recap-commande')) {
       return;
     }
 
-    const prenom = document.getElementById('prenom').value.trim();
-    alert("Votre commande a bien été enregistrée. Merci " + prenom + " ! Nous vous contacterons très vite.");
+    const donneesClient = {
+      nom: document.getElementById('nom').value.trim(),
+      prenom: document.getElementById('prenom').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      contact: document.getElementById('contact').value.trim(),
+      lieu: document.getElementById('lieu').value.trim()
+    };
 
-    localStorage.removeItem(CLE_PANIER);
-    // Prochaine étape : envoi des emails via EmailJS
+    const total = totalPanier(panierActuel);
+    const boutonValider = document.getElementById('btn-valider');
+    const texteBoutonOriginal = boutonValider.innerText;
+
+    boutonValider.disabled = true;
+    boutonValider.innerText = 'Envoi en cours...';
+
+    envoyerEmailsCommande(donneesClient, panierActuel, total)
+      .then(() => {
+        localStorage.removeItem(CLE_PANIER);
+        window.location.href = 'index.html';
+      })
+      .catch((erreur) => {
+        console.error("Erreur lors de l'envoi des emails :", erreur);
+        boutonValider.disabled = false;
+        boutonValider.innerText = texteBoutonOriginal;
+      });
   });
 }
 
