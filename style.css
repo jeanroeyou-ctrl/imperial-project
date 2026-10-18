@@ -1105,3 +1105,64 @@ body.saison-paques .pourquoi-nous .atout:nth-child(3)::after { content: '🌷'; 
   color: red;
   margin-left: 3px;
 }
+
+/* ===== Pages légales et liens du pied de page (à coller tout en bas de style.css) ===== */
+
+.liens-legaux {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.liens-legaux a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.mention-legale {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+
+.mention-legale a {
+  color: #c62828;
+  text-decoration: underline;
+}
+
+.page-legale {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.page-legale h2 {
+  color: #c62828;
+  margin-bottom: 4px;
+}
+
+.page-legale h3 {
+  color: #c62828;
+  margin: 28px 0 8px;
+}
+
+.page-legale ul {
+  margin: 8px 0 8px 20px;
+  padding: 0;
+}
+
+.page-legale li {
+  margin-bottom: 4px;
+}
+
+.page-legale a {
+  color: #c62828;
+  text-decoration: underline;
+}
+
+.page-legale .date-maj {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
