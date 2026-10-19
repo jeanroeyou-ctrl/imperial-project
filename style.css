@@ -1,3 +1,11 @@
+/* ===== POLICES DU SITE : Lora (titres), Nunito Sans (texte), Alex Brush (grands titres décoratifs) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&family=Alex+Brush&display=swap');
+
+:root {
+  --police-titre: 'Lora', Georgia, serif;
+  --police-texte: 'Nunito Sans', Arial, sans-serif;
+}
+
 html {
   overflow-x: hidden; /* CORRIGÉ - uniquement sur html, pas sur body, pour ne pas casser le sticky */
 }
@@ -7,10 +15,15 @@ html{
  }   
 body{
     margin:0;
-    font-family:'Poppins',Arial,sans-serif;
+    font-family: var(--police-texte);
     background: linear-gradient(180deg, #fff0ec 0%, #fdf8f3 100%);
     background-color: #fdf8f3;
     padding-bottom: 40px; 
+}
+
+/* Les boutons et champs de formulaire n'héritent pas de la police par défaut : on la leur donne */
+button, input, select, textarea {
+  font-family: var(--police-texte);
 }
 
 header{
@@ -324,7 +337,7 @@ nav a {
 }
 
 h1 {
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: var(--police-titre);
   font-weight: 700;
   text-align: center;
   color: white;
@@ -335,8 +348,8 @@ h1 {
   overflow-wrap: break-word;
 }
 
-h2 {
-    font-family:'Playfair Display', serif;
+h2, h3, h4 {
+  font-family: var(--police-titre);
 }
 
 .pourquoi-nous {
@@ -374,7 +387,7 @@ h2 {
 }
 
 .atout h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--police-titre);
   margin: 10px 0 8px;
   color: #333;
 }
@@ -392,7 +405,7 @@ h2 {
 }
 
 .page-apropos h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--police-titre);
   font-size: 28px;
   color: #333;
   margin-bottom: 30px;
@@ -484,7 +497,7 @@ h2 {
 }
 
 .contact-section h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--police-titre);
   color: #c62828;
   margin-bottom: 10px;
 }
@@ -590,7 +603,7 @@ h2 {
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 15px;
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: var(--police-texte);
 }
 
 .champ-formulaire input:focus {
@@ -1106,7 +1119,7 @@ body.saison-paques .pourquoi-nous .atout:nth-child(3)::after { content: '🌷'; 
   margin-left: 3px;
 }
 
-/* ===== Pages légales et liens du pied de page (à coller tout en bas de style.css) ===== */
+/* ===== Pages légales et liens du pied de page ===== */
 
 .liens-legaux {
   margin-bottom: 8px;
